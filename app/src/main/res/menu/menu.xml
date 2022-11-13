@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/essentialFragment"
+        android:icon="@drawable/ic_baseline_home_24"
+        android:title="Essential"/>
+    <item
+        android:id="@+id/translateFragment"
+        android:icon="@drawable/ic_baseline_search_24"
+        android:title="Translate"/>
+    <item
+        android:id="@+id/allWordsFragment"
+        android:icon="@drawable/ic_baseline_store_mall_directory_24"
+        android:title="All Words"/>
+    <item
+        android:id="@+id/settingsFragment"
+        android:icon="@drawable/ic_baseline_settings_24"
+        android:title="Settings"/>
+
+</menu>

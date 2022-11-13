@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_room"
+    app:startDestination="@id/essentialWords1Fragment">
+
+    <fragment
+        android:id="@+id/essentialWords1Fragment"
+        android:name="com.example.englishapplication.fragment.EssentialWords1Fragment"
+        android:label="fragment_essential_words1"
+        tools:layout="@layout/fragment_essential_words1" >
+        <action
+            android:id="@+id/action_essentialWords1Fragment_to_saveWordsFragment"
+            app:destination="@id/saveWordsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/saveWordsFragment"
+        android:name="com.example.englishapplication.fragment.saveWords.SaveWordsFragment"
+        android:label="fragment_save_words"
+        tools:layout="@layout/fragment_save_words" >
+        <action
+            android:id="@+id/action_saveWordsFragment_to_essentialWords1Fragment"
+            app:destination="@id/essentialWords1Fragment" />
+    </fragment>
+</navigation>

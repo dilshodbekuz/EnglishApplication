@@ -1,0 +1,2916 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFEB3B"
+    android:orientation="vertical"
+    tools:context=".Plan.PlanFragment">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="20dp"
+        android:layout_marginTop="20dp">
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="back"
+            android:textColor="@color/black"
+            android:background="@null"
+            android:textStyle="bold"
+            android:onClick="previousMonthAction"
+            android:textSize="20sp"/>
+
+        <TextView
+            android:id="@+id/monthYearTV"
+            android:layout_width="0dp"
+            android:layout_weight="2"
+            android:layout_height="wrap_content"
+            android:text="Feb 2021"
+            android:textSize="20sp"
+            android:textAlignment="center"
+            android:textColor="@color/black"/>
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Forward"
+            android:textColor="@color/black"
+            android:background="@null"
+            android:textStyle="bold"
+            android:onClick="nextMonthAction"
+            android:textSize="20sp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="SUN"
+            android:textColor="@color/black"
+            android:textAlignment="center"
+            android:textSize="16sp"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="MON"
+            android:textColor="@color/black"
+            android:textAlignment="center"
+            android:textSize="16sp"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="TUE"
+            android:textColor="@color/black"
+            android:textAlignment="center"
+            android:textSize="16sp"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="WED"
+            android:textColor="@color/black"
+            android:textAlignment="center"
+            android:textSize="16sp"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="THUR"
+            android:textColor="@color/black"
+            android:textAlignment="center"
+            android:textSize="16sp"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="FRI"
+            android:textColor="@color/black"
+            android:textAlignment="center"
+            android:textSize="16sp"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="SAT"
+            android:textColor="@color/black"
+            android:textAlignment="center"
+            android:textSize="16sp"/>
+
+
+    </LinearLayout>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/calendarRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+</LinearLayout>
+ <!--
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:id="@+id/numbers"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                android:orientation="vertical"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="T.r"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="2"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="3"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="4"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="5"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="6"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="7"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="8"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="9"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="10"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="11"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="12"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="13"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="14"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="15"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="16"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="17"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="18"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="19"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="20"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="21"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="22"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="23"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="24"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="25"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="26"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="27"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="28"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="29"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="30"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="31"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/numbers"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <LinearLayout
+                    android:id="@+id/linearLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <EditText
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:hint="write plan"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/black"
+                        android:paddingHorizontal="8dp"
+                        android:textSize="14sp" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:textSize="14sp" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:textSize="14sp" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:textSize="14sp" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:textSize="14sp" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:textSize="14sp" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:textSize="14sp" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:textSize="14sp" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:textSize="14sp" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:textSize="14sp" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:textSize="14sp" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:textSize="14sp" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:textSize="14sp" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:textSize="14sp" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:textSize="14sp" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:textSize="14sp" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:textSize="14sp" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:textSize="14sp" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:textSize="14sp" />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <EditText
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:hint="write plan"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/black"
+                        android:paddingHorizontal="8dp"
+                        android:textSize="14sp" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:textSize="14sp" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:textSize="14sp" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:textSize="14sp" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:textSize="14sp" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:textSize="14sp" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:textSize="14sp" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:textSize="14sp" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:textSize="14sp" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:textSize="14sp" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:textSize="14sp" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:textSize="14sp" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:textSize="14sp" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:textSize="14sp" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:textSize="14sp" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:textSize="14sp" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:textSize="14sp" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:textSize="14sp" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:textSize="14sp" />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <EditText
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:hint="write plan"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/black"
+                        android:paddingHorizontal="8dp"
+                        android:textSize="14sp" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:textSize="14sp" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:textSize="14sp" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:textSize="14sp" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:textSize="14sp" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:textSize="14sp" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:textSize="14sp" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:textSize="14sp" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:textSize="14sp" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:textSize="14sp" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:textSize="14sp" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:textSize="14sp" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:textSize="14sp" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:textSize="14sp" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:textSize="14sp" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:textSize="14sp" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:textSize="14sp" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:textSize="14sp" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:textSize="14sp" />
+
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    >
+
+                    <EditText
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:hint="write plan"
+                        android:paddingHorizontal="8dp"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/black"
+                        android:textSize="14sp" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:textSize="14sp" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:textSize="14sp" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:textSize="14sp" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:textSize="14sp" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:textSize="14sp" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:textSize="14sp" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:textSize="14sp" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:textSize="14sp" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:textSize="14sp" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:textSize="14sp" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:textSize="14sp" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:textSize="14sp" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:textSize="14sp" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:textSize="14sp" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:textSize="14sp" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:textSize="14sp" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:textSize="14sp" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:textSize="14sp" />
+
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    >
+
+                    <EditText
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:hint="write plan"
+                        android:paddingHorizontal="8dp"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/black"
+                        android:textSize="14sp" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:textSize="14sp" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:textSize="14sp" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:textSize="14sp" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:textSize="14sp" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:textSize="14sp" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:textSize="14sp" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:textSize="14sp" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:textSize="14sp" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:textSize="14sp" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:textSize="14sp" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:textSize="14sp" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:textSize="14sp" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:textSize="14sp" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:textSize="14sp" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:textSize="14sp" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:textSize="14sp" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:textSize="14sp" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:textSize="14sp" />
+
+
+                </LinearLayout>
+            </LinearLayout>
+
+            &lt;!&ndash;   <TableLayout
+                   android:layout_width="match_parent"
+                   android:layout_height="match_parent">
+
+                   <TableRow>
+
+                       <TextView
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:layout_gravity="center"
+                           android:gravity="center"
+                           android:text="T.r"
+                           android:textColor="@color/black"
+                           android:textSize="14sp" />
+
+                       <TextView
+                           android:layout_width="wrap_content"
+                           android:layout_height="fill_parent"
+                           android:layout_gravity="center"
+                           android:gravity="center"
+                           android:paddingHorizontal="8dp"
+                           android:text="Dasturalash"
+                           android:textColor="@color/black"
+                           android:textSize="14sp"
+                           android:textStyle="bold" />
+
+                       <TextView
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:layout_gravity="center"
+                           android:gravity="center"
+                           android:paddingHorizontal="8dp"
+                           android:text="english"
+                           android:textColor="@color/black"
+                           android:textSize="14sp"
+                           android:textStyle="bold" />
+
+                       <TextView
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:layout_gravity="center"
+                           android:gravity="center"
+                           android:paddingHorizontal="8dp"
+                           android:text="dota"
+                           android:textColor="@color/black"
+                           android:textSize="14sp"
+                           android:textStyle="bold" />
+
+                       <TextView
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:layout_gravity="center"
+                           android:gravity="center"
+                           android:paddingHorizontal="8dp"
+                           android:text="Uxlash"
+                           android:textColor="@color/black"
+                           android:textSize="14sp"
+                           android:textStyle="bold" />
+
+                   </TableRow>
+
+                   <TableRow>
+
+                       <TextView
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:layout_gravity="center"
+                           android:layout_marginHorizontal="8dp"
+                           android:gravity="center"
+                           android:paddingHorizontal="8dp"
+                           android:text="1"
+                           android:textColor="@color/black"
+                           android:textSize="24sp"
+                           android:textStyle="bold" />
+
+                       <RadioButton
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:layout_gravity="center"
+                           android:layout_marginHorizontal="8dp"
+                           android:gravity="center"
+                           android:paddingHorizontal="8dp"
+                           android:textSize="24sp" />
+
+                       <RadioButton
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:layout_gravity="center"
+                           android:layout_marginHorizontal="8dp"
+                           android:paddingHorizontal="8dp"
+                           android:text=""
+                           android:textSize="24sp" />
+
+                       <RadioButton
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:layout_gravity="center"
+                           android:layout_marginHorizontal="8dp"
+                           android:paddingHorizontal="8dp"
+                           android:text=""
+                           android:textSize="24sp" />
+
+                       <RadioButton
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:layout_gravity="center"
+                           android:layout_marginHorizontal="8dp"
+                           android:paddingHorizontal="8dp"
+                           android:text=""
+                           android:textSize="24sp" />
+
+                   </TableRow>
+
+                   <TableRow>
+
+                       <TextView
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:layout_gravity="center"
+                           android:layout_marginHorizontal="8dp"
+                           android:gravity="center"
+                           android:paddingHorizontal="8dp"
+                           android:text="2"
+                           android:textColor="@color/black"
+                           android:textSize="24sp"
+                           android:textStyle="bold" />
+
+                       <RadioButton
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:layout_gravity="center"
+                           android:layout_marginHorizontal="8dp"
+                           android:gravity="center"
+                           android:paddingHorizontal="8dp"
+                           android:text=""
+                           android:textSize="24sp" />
+
+                       <RadioButton
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:layout_gravity="center"
+                           android:layout_marginHorizontal="8dp"
+                           android:gravity="center"
+                           android:paddingHorizontal="8dp"
+                           android:text=""
+                           android:textSize="24sp" />
+
+                       <RadioButton
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:layout_gravity="center"
+                           android:layout_marginHorizontal="8dp"
+                           android:gravity="center"
+                           android:paddingHorizontal="8dp"
+                           android:text=""
+                           android:textSize="24sp" />
+
+                       <RadioButton
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:layout_gravity="center"
+                           android:layout_marginHorizontal="8dp"
+                           android:gravity="center"
+                           android:paddingHorizontal="8dp"
+                           android:text=""
+                           android:textSize="24sp" />
+
+                   </TableRow>
+
+                   <TableRow>
+
+                       <TextView
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:layout_gravity="center"
+                           android:layout_marginHorizontal="8dp"
+                           android:gravity="center"
+                           android:paddingHorizontal="8dp"
+                           android:text="3"
+                           android:textColor="@color/black"
+                           android:textSize="24sp"
+                           android:textStyle="bold" />
+
+                       <RadioButton
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:layout_gravity="center"
+                           android:layout_marginHorizontal="8dp"
+                           android:gravity="center"
+                           android:paddingHorizontal="8dp"
+                           android:text=""
+                           android:textSize="24sp" />
+
+                       <RadioButton
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:layout_gravity="center"
+                           android:layout_marginHorizontal="8dp"
+                           android:gravity="center"
+                           android:paddingHorizontal="8dp"
+                           android:text=""
+                           android:textSize="24sp" />
+
+                       <RadioButton
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:layout_gravity="center"
+                           android:layout_marginHorizontal="8dp"
+                           android:gravity="center"
+                           android:paddingHorizontal="8dp"
+                           android:text=""
+                           android:textSize="24sp" />
+
+                       <RadioButton
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:layout_gravity="center"
+                           android:layout_marginHorizontal="8dp"
+                           android:gravity="center"
+                           android:paddingHorizontal="8dp"
+                           android:text=""
+                           android:textSize="24sp" />
+
+                   </TableRow>
+
+                   <TableRow>
+
+                       <TextView
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:layout_gravity="center"
+                           android:layout_marginHorizontal="8dp"
+                           android:gravity="center"
+                           android:paddingHorizontal="8dp"
+                           android:text="4"
+                           android:textColor="@color/black"
+                           android:textSize="24sp"
+                           android:textStyle="bold" />
+
+                       <RadioButton
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:layout_gravity="center"
+                           android:layout_marginHorizontal="8dp"
+                           android:gravity="center"
+                           android:paddingHorizontal="8dp"
+                           android:text=""
+                           android:textSize="24sp" />
+
+                       <RadioButton
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:layout_gravity="center"
+                           android:layout_marginHorizontal="8dp"
+                           android:gravity="center"
+                           android:paddingHorizontal="8dp"
+                           android:text=""
+                           android:textSize="24sp" />
+
+                       <RadioButton
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:layout_gravity="center"
+                           android:layout_marginHorizontal="8dp"
+                           android:gravity="center"
+                           android:paddingHorizontal="8dp"
+                           android:text=""
+                           android:textSize="24sp" />
+
+                       <RadioButton
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:layout_gravity="center"
+                           android:layout_marginHorizontal="8dp"
+                           android:gravity="center"
+                           android:paddingHorizontal="8dp"
+                           android:text=""
+                           android:textSize="24sp" />
+
+                   </TableRow>
+
+                   <TableRow>
+
+                       <TextView
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:layout_gravity="center"
+                           android:layout_marginHorizontal="8dp"
+                           android:gravity="center"
+                           android:paddingHorizontal="8dp"
+                           android:text="5"
+                           android:textColor="@color/black"
+                           android:textSize="24sp"
+                           android:textStyle="bold" />
+
+                       <RadioButton
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:layout_gravity="center"
+                           android:layout_marginHorizontal="8dp"
+                           android:gravity="center"
+                           android:paddingHorizontal="8dp"
+                           android:text=""
+                           android:textSize="24sp" />
+
+                       <RadioButton
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:layout_gravity="center"
+                           android:layout_marginHorizontal="8dp"
+                           android:gravity="center"
+                           android:paddingHorizontal="8dp"
+                           android:text=""
+                           android:textSize="24sp" />
+
+                       <RadioButton
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:layout_gravity="center"
+                           android:layout_marginHorizontal="8dp"
+                           android:gravity="center"
+                           android:paddingHorizontal="8dp"
+                           android:text=""
+                           android:textSize="24sp" />
+
+                       <RadioButton
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:layout_gravity="center"
+                           android:layout_marginHorizontal="8dp"
+                           android:gravity="center"
+                           android:paddingHorizontal="8dp"
+                           android:text=""
+                           android:textSize="24sp" />
+
+                   </TableRow>
+
+                   <TableRow>
+
+                       <TextView
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:layout_gravity="center"
+                           android:layout_marginHorizontal="8dp"
+                           android:gravity="center"
+                           android:paddingHorizontal="8dp"
+                           android:text="6"
+                           android:textColor="@color/black"
+                           android:textSize="24sp"
+                           android:textStyle="bold" />
+
+                       <RadioButton
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:layout_gravity="center"
+                           android:layout_marginHorizontal="8dp"
+                           android:gravity="center"
+                           android:paddingHorizontal="8dp"
+                           android:text=""
+                           android:textSize="24sp" />
+
+                       <RadioButton
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:layout_gravity="center"
+                           android:layout_marginHorizontal="8dp"
+                           android:gravity="center"
+                           android:paddingHorizontal="8dp"
+                           android:text=""
+                           android:textSize="24sp" />
+
+                       <RadioButton
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:layout_gravity="center"
+                           android:layout_marginHorizontal="8dp"
+                           android:gravity="center"
+                           android:paddingHorizontal="8dp"
+                           android:text=""
+                           android:textSize="24sp" />
+
+                       <RadioButton
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:layout_gravity="center"
+                           android:layout_marginHorizontal="8dp"
+                           android:gravity="center"
+                           android:paddingHorizontal="8dp"
+                           android:text=""
+                           android:textSize="24sp" />
+
+                   </TableRow>
+
+                   <TableRow>
+
+                       <TextView
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:layout_gravity="center"
+                           android:layout_marginHorizontal="8dp"
+                           android:gravity="center"
+                           android:paddingHorizontal="8dp"
+                           android:text="7"
+                           android:textColor="@color/black"
+                           android:textSize="24sp"
+                           android:textStyle="bold" />
+
+                       <RadioButton
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:layout_gravity="center"
+                           android:layout_marginHorizontal="8dp"
+                           android:gravity="center"
+                           android:paddingHorizontal="8dp"
+                           android:text=""
+                           android:textSize="24sp" />
+
+                       <RadioButton
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:layout_gravity="center"
+                           android:layout_marginHorizontal="8dp"
+                           android:gravity="center"
+                           android:paddingHorizontal="8dp"
+                           android:text=""
+                           android:textSize="24sp" />
+
+                       <RadioButton
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:layout_gravity="center"
+                           android:layout_marginHorizontal="8dp"
+                           android:gravity="center"
+                           android:paddingHorizontal="8dp"
+                           android:text=""
+                           android:textSize="24sp" />
+
+                       <RadioButton
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:layout_gravity="center"
+                           android:layout_marginHorizontal="8dp"
+                           android:gravity="center"
+                           android:paddingHorizontal="8dp"
+                           android:text=""
+                           android:textSize="24sp" />
+                   </TableRow>
+
+                   <TableRow>
+
+                       <TextView
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:layout_gravity="center"
+                           android:layout_marginHorizontal="8dp"
+                           android:gravity="center"
+                           android:paddingHorizontal="8dp"
+                           android:text="8"
+                           android:textColor="@color/black"
+                           android:textSize="24sp"
+                           android:textStyle="bold" />
+
+                       <RadioButton
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:layout_gravity="center"
+                           android:layout_marginHorizontal="8dp"
+                           android:gravity="center"
+                           android:paddingHorizontal="8dp"
+                           android:text=""
+                           android:textSize="24sp" />
+
+                       <RadioButton
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:layout_gravity="center"
+                           android:layout_marginHorizontal="8dp"
+                           android:gravity="center"
+                           android:paddingHorizontal="8dp"
+                           android:text=""
+                           android:textSize="24sp" />
+
+                       <RadioButton
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:layout_gravity="center"
+                           android:layout_marginHorizontal="8dp"
+                           android:gravity="center"
+                           android:paddingHorizontal="8dp"
+                           android:text=""
+                           android:textSize="24sp" />
+
+                       <RadioButton
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:layout_gravity="center"
+                           android:layout_marginHorizontal="8dp"
+                           android:gravity="center"
+                           android:paddingHorizontal="8dp"
+                           android:text=""
+                           android:textSize="24sp" />
+                   </TableRow>
+
+                   <TableRow>
+
+                       <TextView
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:layout_gravity="center"
+                           android:layout_marginHorizontal="8dp"
+                           android:gravity="center"
+                           android:paddingHorizontal="8dp"
+                           android:text="9"
+                           android:textColor="@color/black"
+                           android:textSize="24sp"
+                           android:textStyle="bold" />
+
+                       <RadioButton
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:layout_gravity="center"
+                           android:layout_marginHorizontal="8dp"
+                           android:gravity="center"
+                           android:paddingHorizontal="8dp"
+                           android:text=""
+                           android:textSize="24sp" />
+
+                       <RadioButton
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:layout_gravity="center"
+                           android:layout_marginHorizontal="8dp"
+                           android:gravity="center"
+                           android:paddingHorizontal="8dp"
+                           android:text=""
+                           android:textSize="24sp" />
+
+                       <RadioButton
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:layout_gravity="center"
+                           android:layout_marginHorizontal="8dp"
+                           android:gravity="center"
+                           android:paddingHorizontal="8dp"
+                           android:text=""
+                           android:textSize="24sp" />
+
+                       <RadioButton
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:layout_gravity="center"
+                           android:layout_marginHorizontal="8dp"
+                           android:gravity="center"
+                           android:paddingHorizontal="8dp"
+                           android:text=""
+                           android:textSize="24sp" />
+
+                   </TableRow>
+
+                   <TableRow>
+
+                       <TextView
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:layout_gravity="center"
+                           android:layout_marginHorizontal="8dp"
+                           android:gravity="center"
+                           android:paddingHorizontal="8dp"
+                           android:text="10"
+                           android:textColor="@color/black"
+                           android:textSize="24sp"
+                           android:textStyle="bold" />
+
+                       <RadioButton
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:layout_gravity="center"
+                           android:layout_marginHorizontal="8dp"
+                           android:gravity="center"
+                           android:paddingHorizontal="8dp"
+                           android:text=""
+                           android:textSize="24sp" />
+
+                       <RadioButton
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:layout_gravity="center"
+                           android:layout_marginHorizontal="8dp"
+                           android:gravity="center"
+                           android:paddingHorizontal="8dp"
+                           android:text=""
+                           android:textSize="24sp" />
+
+                       <RadioButton
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:layout_gravity="center"
+                           android:layout_marginHorizontal="8dp"
+                           android:gravity="center"
+                           android:paddingHorizontal="8dp"
+                           android:text=""
+                           android:textSize="24sp" />
+
+                       <RadioButton
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:layout_gravity="center"
+                           android:layout_marginHorizontal="8dp"
+                           android:gravity="center"
+                           android:paddingHorizontal="8dp"
+                           android:text=""
+                           android:textSize="24sp" />
+                   </TableRow>
+
+                   <TableRow>
+
+                       <TextView
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:layout_gravity="center"
+                           android:layout_marginHorizontal="8dp"
+                           android:gravity="center"
+                           android:paddingHorizontal="8dp"
+                           android:text="11"
+                           android:textColor="@color/black"
+                           android:textSize="24sp"
+                           android:textStyle="bold" />
+
+                       <RadioButton
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:layout_gravity="center"
+                           android:layout_marginHorizontal="8dp"
+                           android:gravity="center"
+                           android:paddingHorizontal="8dp"
+                           android:text=""
+                           android:textSize="24sp" />
+
+                       <RadioButton
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:layout_gravity="center"
+                           android:layout_marginHorizontal="8dp"
+                           android:gravity="center"
+                           android:paddingHorizontal="8dp"
+                           android:text=""
+                           android:textSize="24sp" />
+
+                       <RadioButton
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:layout_gravity="center"
+                           android:layout_marginHorizontal="8dp"
+                           android:gravity="center"
+                           android:paddingHorizontal="8dp"
+                           android:text=""
+                           android:textSize="24sp" />
+
+                       <RadioButton
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:layout_gravity="center"
+                           android:layout_marginHorizontal="8dp"
+                           android:gravity="center"
+                           android:paddingHorizontal="8dp"
+                           android:text=""
+                           android:textSize="24sp" />
+                   </TableRow>
+
+                   <TableRow>
+
+                       <TextView
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:layout_gravity="center"
+                           android:layout_marginHorizontal="8dp"
+                           android:gravity="center"
+                           android:paddingHorizontal="8dp"
+                           android:text="12"
+                           android:textColor="@color/black"
+                           android:textSize="24sp"
+                           android:textStyle="bold" />
+
+                       <RadioButton
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:layout_gravity="center"
+                           android:layout_marginHorizontal="8dp"
+                           android:gravity="center"
+                           android:paddingHorizontal="8dp"
+                           android:text=""
+                           android:textSize="24sp" />
+
+                       <RadioButton
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:layout_gravity="center"
+                           android:layout_marginHorizontal="8dp"
+                           android:gravity="center"
+                           android:paddingHorizontal="8dp"
+                           android:text=""
+                           android:textSize="24sp" />
+
+                       <RadioButton
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:layout_gravity="center"
+                           android:layout_marginHorizontal="8dp"
+                           android:gravity="center"
+                           android:paddingHorizontal="8dp"
+                           android:text=""
+                           android:textSize="24sp" />
+
+                       <RadioButton
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:layout_gravity="center"
+                           android:layout_marginHorizontal="8dp"
+                           android:gravity="center"
+                           android:paddingHorizontal="8dp"
+                           android:text=""
+                           android:textSize="24sp" />
+                   </TableRow>
+
+                   <TableRow>
+
+                       <TextView
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:layout_gravity="center"
+                           android:layout_marginHorizontal="8dp"
+                           android:gravity="center"
+                           android:paddingHorizontal="8dp"
+                           android:text="13"
+                           android:textColor="@color/black"
+                           android:textSize="24sp"
+                           android:textStyle="bold" />
+
+                       <RadioButton
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:layout_gravity="center"
+                           android:layout_marginHorizontal="8dp"
+                           android:gravity="center"
+                           android:paddingHorizontal="8dp"
+                           android:text=""
+                           android:textSize="24sp" />
+
+                       <RadioButton
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:layout_gravity="center"
+                           android:layout_marginHorizontal="8dp"
+                           android:gravity="center"
+                           android:paddingHorizontal="8dp"
+                           android:text=""
+                           android:textSize="24sp" />
+
+                       <RadioButton
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:layout_gravity="center"
+                           android:layout_marginHorizontal="8dp"
+                           android:gravity="center"
+                           android:paddingHorizontal="8dp"
+                           android:text=""
+                           android:textSize="24sp" />
+
+                       <RadioButton
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:layout_gravity="center"
+                           android:layout_marginHorizontal="8dp"
+                           android:gravity="center"
+                           android:paddingHorizontal="8dp"
+                           android:text=""
+                           android:textSize="24sp" />
+                   </TableRow>
+
+                   <TableRow>
+
+                       <TextView
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:layout_gravity="center"
+                           android:layout_marginHorizontal="8dp"
+                           android:gravity="center"
+                           android:paddingHorizontal="8dp"
+                           android:text="14"
+                           android:textColor="@color/black"
+                           android:textSize="24sp"
+                           android:textStyle="bold" />
+
+                       <RadioButton
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:layout_gravity="center"
+                           android:layout_marginHorizontal="8dp"
+                           android:gravity="center"
+                           android:paddingHorizontal="8dp"
+                           android:text=""
+                           android:textSize="24sp" />
+
+                       <RadioButton
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:layout_gravity="center"
+                           android:layout_marginHorizontal="8dp"
+                           android:gravity="center"
+                           android:paddingHorizontal="8dp"
+                           android:text=""
+                           android:textSize="24sp" />
+
+                       <RadioButton
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:layout_gravity="center"
+                           android:layout_marginHorizontal="8dp"
+                           android:gravity="center"
+                           android:paddingHorizontal="8dp"
+                           android:text=""
+                           android:textSize="24sp" />
+
+                       <RadioButton
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:layout_gravity="center"
+                           android:layout_marginHorizontal="8dp"
+                           android:gravity="center"
+                           android:paddingHorizontal="8dp"
+                           android:text=""
+                           android:textSize="24sp" />
+                   </TableRow>
+
+                   <TableRow>
+
+                       <TextView
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:layout_gravity="center"
+                           android:layout_marginHorizontal="8dp"
+                           android:gravity="center"
+                           android:paddingHorizontal="8dp"
+                           android:text="15"
+                           android:textColor="@color/black"
+                           android:textSize="24sp"
+                           android:textStyle="bold" />
+
+                       <RadioButton
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:layout_gravity="center"
+                           android:layout_marginHorizontal="8dp"
+                           android:gravity="center"
+                           android:paddingHorizontal="8dp"
+                           android:text=""
+                           android:textSize="24sp" />
+
+                       <RadioButton
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:layout_gravity="center"
+                           android:layout_marginHorizontal="8dp"
+                           android:gravity="center"
+                           android:paddingHorizontal="8dp"
+                           android:text=""
+                           android:textSize="24sp" />
+
+                       <RadioButton
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:layout_gravity="center"
+                           android:layout_marginHorizontal="8dp"
+                           android:gravity="center"
+                           android:paddingHorizontal="8dp"
+                           android:text=""
+                           android:textSize="24sp" />
+
+                       <RadioButton
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:layout_gravity="center"
+                           android:layout_marginHorizontal="8dp"
+                           android:gravity="center"
+                           android:paddingHorizontal="8dp"
+                           android:text=""
+                           android:textSize="24sp" />
+                   </TableRow>
+
+                   <TableRow>
+
+                       <TextView
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:layout_gravity="center"
+                           android:layout_marginHorizontal="8dp"
+                           android:gravity="center"
+                           android:paddingHorizontal="8dp"
+                           android:text="16"
+                           android:textColor="@color/black"
+                           android:textSize="24sp"
+                           android:textStyle="bold" />
+
+                       <RadioButton
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:layout_gravity="center"
+                           android:layout_marginHorizontal="8dp"
+                           android:gravity="center"
+                           android:paddingHorizontal="8dp"
+                           android:text=""
+                           android:textSize="24sp" />
+
+                       <RadioButton
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:layout_gravity="center"
+                           android:layout_marginHorizontal="8dp"
+                           android:gravity="center"
+                           android:paddingHorizontal="8dp"
+                           android:text=""
+                           android:textSize="24sp" />
+
+                       <RadioButton
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:layout_gravity="center"
+                           android:layout_marginHorizontal="8dp"
+                           android:gravity="center"
+                           android:paddingHorizontal="8dp"
+                           android:text=""
+                           android:textSize="24sp" />
+
+                       <RadioButton
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:layout_gravity="center"
+                           android:layout_marginHorizontal="8dp"
+                           android:gravity="center"
+                           android:paddingHorizontal="8dp"
+                           android:text=""
+                           android:textSize="24sp" />
+                   </TableRow>
+
+                   <TableRow>
+
+                       <TextView
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:layout_gravity="center"
+                           android:layout_marginHorizontal="8dp"
+                           android:gravity="center"
+                           android:paddingHorizontal="8dp"
+                           android:text="17"
+                           android:textColor="@color/black"
+                           android:textSize="24sp"
+                           android:textStyle="bold" />
+
+                       <RadioButton
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:layout_gravity="center"
+                           android:layout_marginHorizontal="8dp"
+                           android:gravity="center"
+                           android:paddingHorizontal="8dp"
+                           android:text=""
+                           android:textSize="24sp" />
+
+                       <RadioButton
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:layout_gravity="center"
+                           android:layout_marginHorizontal="8dp"
+                           android:gravity="center"
+                           android:paddingHorizontal="8dp"
+                           android:text=""
+                           android:textSize="24sp" />
+
+                       <RadioButton
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:layout_gravity="center"
+                           android:layout_marginHorizontal="8dp"
+                           android:gravity="center"
+                           android:paddingHorizontal="8dp"
+                           android:text=""
+                           android:textSize="24sp" />
+
+                       <RadioButton
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:layout_gravity="center"
+                           android:layout_marginHorizontal="8dp"
+                           android:gravity="center"
+                           android:paddingHorizontal="8dp"
+                           android:text=""
+                           android:textSize="24sp" />
+                   </TableRow>
+
+                   <TableRow>
+
+                       <TextView
+                           android:layout_width="wrap_content"
+                           android:layout_height="match_parent"
+                           android:layout_gravity="center"
+                           android:layout_marginHorizontal="8dp"
+                           android:gravity="center"
+                           android:paddingHorizontal="8dp"
+                           android:text="18"
+                           android:textColor="@color/black"
+                           android:textSize="24sp"
+                           android:textStyle="bold" />
+
+                       <RadioButton
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:layout_gravity="center"
+                           android:layout_marginHorizontal="8dp"
+                           android:gravity="center"
+                           android:paddingHorizontal="8dp"
+                           android:text=""
+                           android:textSize="24sp" />
+
+                       <RadioButton
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:layout_gravity="center"
+                           android:layout_marginHorizontal="8dp"
+                           android:gravity="center"
+                           android:paddingHorizontal="8dp"
+                           android:text=""
+                           android:textSize="24sp" />
+
+                       <RadioButton
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:layout_gravity="center"
+                           android:layout_marginHorizontal="8dp"
+                           android:gravity="center"
+                           android:paddingHorizontal="8dp"
+                           android:text=""
+                           android:textSize="24sp" />
+
+                       <RadioButton
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:layout_gravity="center"
+                           android:layout_marginHorizontal="8dp"
+                           android:gravity="center"
+                           android:paddingHorizontal="8dp"
+                           android:text=""
+                           android:textSize="24sp" />
+                   </TableRow>
+
+                   <TableRow>
+
+                       <TextView
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:layout_gravity="center"
+                           android:layout_marginHorizontal="8dp"
+                           android:gravity="center"
+                           android:paddingHorizontal="8dp"
+                           android:text="19"
+                           android:textColor="@color/black"
+                           android:textSize="24sp"
+                           android:textStyle="bold" />
+
+                       <RadioButton
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:layout_gravity="center"
+                           android:layout_marginHorizontal="8dp"
+                           android:gravity="center"
+                           android:paddingHorizontal="8dp"
+                           android:text=""
+                           android:textSize="24sp" />
+
+                       <RadioButton
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:layout_gravity="center"
+                           android:layout_marginHorizontal="8dp"
+                           android:gravity="center"
+                           android:paddingHorizontal="8dp"
+                           android:text=""
+                           android:textSize="24sp" />
+
+                       <RadioButton
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:layout_gravity="center"
+                           android:layout_marginHorizontal="8dp"
+                           android:gravity="center"
+                           android:paddingHorizontal="8dp"
+                           android:text=""
+                           android:textSize="24sp" />
+
+                       <RadioButton
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:layout_gravity="center"
+                           android:layout_marginHorizontal="8dp"
+                           android:gravity="center"
+                           android:paddingHorizontal="8dp"
+                           android:text=""
+                           android:textSize="24sp" />="24sp" />
+
+                   </TableRow>
+
+                   <TableRow>
+
+                       <TextView
+                           android:layout_width="wrap_content"
+                           android:layout_height="match_parent"
+                           android:layout_gravity="center"
+                           android:layout_marginHorizontal="8dp"
+                           android:gravity="center"
+                           android:paddingHorizontal="8dp"
+                           android:text="20"
+                           android:textColor="@color/black"
+                           android:textSize="24sp"
+                           android:textStyle="bold" />
+
+                       <RadioButton
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:layout_gravity="center"
+                           android:layout_marginHorizontal="8dp"
+                           android:gravity="center"
+                           android:paddingHorizontal="8dp"
+                           android:text=""
+                           android:textSize="24sp" />
+
+                       <RadioButton
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:layout_gravity="center"
+                           android:layout_marginHorizontal="8dp"
+                           android:gravity="center"
+                           android:paddingHorizontal="8dp"
+                           android:text=""
+                           android:textSize="24sp" />
+
+                       <RadioButton
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:layout_gravity="center"
+                           android:layout_marginHorizontal="8dp"
+                           android:gravity="center"
+                           android:paddingHorizontal="8dp"
+                           android:text=""
+                           android:textSize="24sp" />
+
+                       <RadioButton
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:layout_gravity="center"
+                           android:layout_marginHorizontal="8dp"
+                           android:gravity="center"
+                           android:paddingHorizontal="8dp"
+                           android:text=""
+                           android:textSize="24sp" />
+                   </TableRow>
+
+                   <TableRow>
+
+                       <TextView
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:layout_gravity="center"
+                           android:layout_marginHorizontal="8dp"
+                           android:gravity="center"
+                           android:paddingHorizontal="8dp"
+                           android:text="21"
+                           android:textColor="@color/black"
+                           android:textSize="24sp"
+                           android:textStyle="bold" />
+
+                       <RadioButton
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:layout_gravity="center"
+                           android:layout_marginHorizontal="8dp"
+                           android:gravity="center"
+                           android:paddingHorizontal="8dp"
+                           android:text=""
+                           android:textSize="24sp" />
+
+                       <RadioButton
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:layout_gravity="center"
+                           android:layout_marginHorizontal="8dp"
+                           android:gravity="center"
+                           android:paddingHorizontal="8dp"
+                           android:text=""
+                           android:textSize="24sp" />
+
+                       <RadioButton
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:layout_gravity="center"
+                           android:layout_marginHorizontal="8dp"
+                           android:gravity="center"
+                           android:paddingHorizontal="8dp"
+                           android:text=""
+                           android:textSize="24sp" />
+
+                       <RadioButton
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:layout_gravity="center"
+                           android:layout_marginHorizontal="8dp"
+                           android:gravity="center"
+                           android:paddingHorizontal="8dp"
+                           android:text=""
+                           android:textSize="24sp" />
+                   </TableRow>
+
+                   <TableRow>
+
+                       <TextView
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:layout_gravity="center"
+                           android:layout_marginHorizontal="8dp"
+                           android:gravity="center"
+                           android:paddingHorizontal="8dp"
+                           android:text="22"
+                           android:textColor="@color/black"
+                           android:textSize="24sp"
+                           android:textStyle="bold" />
+
+                       <RadioButton
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:layout_gravity="center"
+                           android:layout_marginHorizontal="8dp"
+                           android:gravity="center"
+                           android:paddingHorizontal="8dp"
+                           android:text=""
+                           android:textSize="24sp" />
+
+                       <RadioButton
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:layout_gravity="center"
+                           android:layout_marginHorizontal="8dp"
+                           android:gravity="center"
+                           android:paddingHorizontal="8dp"
+                           android:text=""
+                           android:textSize="24sp" />
+
+                       <RadioButton
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:layout_gravity="center"
+                           android:layout_marginHorizontal="8dp"
+                           android:gravity="center"
+                           android:paddingHorizontal="8dp"
+                           android:text=""
+                           android:textSize="24sp" />
+
+                       <RadioButton
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:layout_gravity="center"
+                           android:layout_marginHorizontal="8dp"
+                           android:gravity="center"
+                           android:paddingHorizontal="8dp"
+                           android:text=""
+                           android:textSize="24sp" />
+                   </TableRow>
+
+                   <TableRow>
+
+                       <TextView
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:layout_gravity="center"
+                           android:layout_marginHorizontal="8dp"
+                           android:gravity="center"
+                           android:paddingHorizontal="8dp"
+                           android:text="23"
+                           android:textColor="@color/black"
+                           android:textSize="24sp"
+                           android:textStyle="bold" />
+
+                       <RadioButton
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:layout_gravity="center"
+                           android:layout_marginHorizontal="8dp"
+                           android:gravity="center"
+                           android:paddingHorizontal="8dp"
+                           android:text=""
+                           android:textSize="24sp" />
+
+                       <RadioButton
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:layout_gravity="center"
+                           android:layout_marginHorizontal="8dp"
+                           android:gravity="center"
+                           android:paddingHorizontal="8dp"
+                           android:text=""
+                           android:textSize="24sp" />
+
+                       <RadioButton
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:layout_gravity="center"
+                           android:layout_marginHorizontal="8dp"
+                           android:gravity="center"
+                           android:paddingHorizontal="8dp"
+                           android:text=""
+                           android:textSize="24sp" />
+
+                       <RadioButton
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:layout_gravity="center"
+                           android:layout_marginHorizontal="8dp"
+                           android:gravity="center"
+                           android:paddingHorizontal="8dp"
+                           android:text=""
+                           android:textSize="24sp" />
+                   </TableRow>
+
+                   <TableRow>
+
+                       <TextView
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:layout_gravity="center"
+                           android:layout_marginHorizontal="8dp"
+                           android:gravity="center"
+                           android:paddingHorizontal="8dp"
+                           android:text="24"
+                           android:textColor="@color/black"
+                           android:textSize="24sp"
+                           android:textStyle="bold" />
+
+                       <RadioButton
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:layout_gravity="center"
+                           android:layout_marginHorizontal="8dp"
+                           android:gravity="center"
+                           android:paddingHorizontal="8dp"
+                           android:text=""
+                           android:textSize="24sp" />
+
+                       <RadioButton
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:layout_gravity="center"
+                           android:layout_marginHorizontal="8dp"
+                           android:gravity="center"
+                           android:paddingHorizontal="8dp"
+                           android:text=""
+                           android:textSize="24sp" />
+
+                       <RadioButton
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:layout_gravity="center"
+                           android:layout_marginHorizontal="8dp"
+                           android:gravity="center"
+                           android:paddingHorizontal="8dp"
+                           android:text=""
+                           android:textSize="24sp" />
+
+                       <RadioButton
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:layout_gravity="center"
+                           android:layout_marginHorizontal="8dp"
+                           android:gravity="center"
+                           android:paddingHorizontal="8dp"
+                           android:text=""
+                           android:textSize="24sp" />
+                   </TableRow>
+
+                   <TableRow>
+
+                       <TextView
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:layout_gravity="center"
+                           android:layout_marginHorizontal="8dp"
+                           android:gravity="center"
+                           android:paddingHorizontal="8dp"
+                           android:text="25"
+                           android:textColor="@color/black"
+                           android:textSize="24sp"
+                           android:textStyle="bold" />
+
+                       <RadioButton
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:layout_gravity="center"
+                           android:layout_marginHorizontal="8dp"
+                           android:gravity="center"
+                           android:paddingHorizontal="8dp"
+                           android:text=""
+                           android:textSize="24sp" />
+
+                       <RadioButton
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:layout_gravity="center"
+                           android:layout_marginHorizontal="8dp"
+                           android:gravity="center"
+                           android:paddingHorizontal="8dp"
+                           android:text=""
+                           android:textSize="24sp" />
+
+                       <RadioButton
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:layout_gravity="center"
+                           android:layout_marginHorizontal="8dp"
+                           android:gravity="center"
+                           android:paddingHorizontal="8dp"
+                           android:text=""
+                           android:textSize="24sp" />
+
+                       <RadioButton
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:layout_gravity="center"
+                           android:layout_marginHorizontal="8dp"
+                           android:gravity="center"
+                           android:paddingHorizontal="8dp"
+                           android:text=""
+                           android:textSize="24sp" />
+                   </TableRow>
+
+                   <TableRow>
+
+                       <TextView
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:layout_gravity="center"
+                           android:layout_marginHorizontal="8dp"
+                           android:gravity="center"
+                           android:paddingHorizontal="8dp"
+                           android:text="26"
+                           android:textColor="@color/black"
+                           android:textSize="24sp"
+                           android:textStyle="bold" />
+
+                       <RadioButton
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:layout_gravity="center"
+                           android:layout_marginHorizontal="8dp"
+                           android:gravity="center"
+                           android:paddingHorizontal="8dp"
+                           android:text=""
+                           android:textSize="24sp" />
+
+                       <RadioButton
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:layout_gravity="center"
+                           android:layout_marginHorizontal="8dp"
+                           android:gravity="center"
+                           android:paddingHorizontal="8dp"
+                           android:text=""
+                           android:textSize="24sp" />
+
+                       <RadioButton
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:layout_gravity="center"
+                           android:layout_marginHorizontal="8dp"
+                           android:gravity="center"
+                           android:paddingHorizontal="8dp"
+                           android:text=""
+                           android:textSize="24sp" />
+
+                       <RadioButton
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:layout_gravity="center"
+                           android:layout_marginHorizontal="8dp"
+                           android:gravity="center"
+                           android:paddingHorizontal="8dp"
+                           android:text=""
+                           android:textSize="24sp" />
+                   </TableRow>
+
+                   <TableRow>
+
+                       <TextView
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:layout_gravity="center"
+                           android:layout_marginHorizontal="8dp"
+                           android:gravity="center"
+                           android:paddingHorizontal="8dp"
+                           android:text="27"
+                           android:textColor="@color/black"
+                           android:textSize="24sp"
+                           android:textStyle="bold" />
+
+                       <RadioButton
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:layout_gravity="center"
+                           android:layout_marginHorizontal="8dp"
+                           android:gravity="center"
+                           android:paddingHorizontal="8dp"
+                           android:text=""
+                           android:textSize="24sp" />
+
+                       <RadioButton
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:layout_gravity="center"
+                           android:layout_marginHorizontal="8dp"
+                           android:gravity="center"
+                           android:paddingHorizontal="8dp"
+                           android:text=""
+                           android:textSize="24sp" />
+
+                       <RadioButton
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:layout_gravity="center"
+                           android:layout_marginHorizontal="8dp"
+                           android:gravity="center"
+                           android:paddingHorizontal="8dp"
+                           android:text=""
+                           android:textSize="24sp" />
+
+                       <RadioButton
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:layout_gravity="center"
+                           android:layout_marginHorizontal="8dp"
+                           android:gravity="center"
+                           android:paddingHorizontal="8dp"
+                           android:text=""
+                           android:textSize="24sp" />
+                   </TableRow>
+
+                   <TableRow>
+
+                       <TextView
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:layout_gravity="center"
+                           android:layout_marginHorizontal="8dp"
+                           android:gravity="center"
+                           android:paddingHorizontal="8dp"
+                           android:text="28"
+                           android:textColor="@color/black"
+                           android:textSize="24sp"
+                           android:textStyle="bold" />
+
+                       <RadioButton
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:layout_gravity="center"
+                           android:layout_marginHorizontal="8dp"
+                           android:gravity="center"
+                           android:paddingHorizontal="8dp"
+                           android:text=""
+                           android:textSize="24sp" />
+
+                       <RadioButton
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:layout_gravity="center"
+                           android:layout_marginHorizontal="8dp"
+                           android:gravity="center"
+                           android:paddingHorizontal="8dp"
+                           android:text=""
+                           android:textSize="24sp" />
+
+                       <RadioButton
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:layout_gravity="center"
+                           android:layout_marginHorizontal="8dp"
+                           android:gravity="center"
+                           android:paddingHorizontal="8dp"
+                           android:text=""
+                           android:textSize="24sp" />
+
+                       <RadioButton
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:layout_gravity="center"
+                           android:layout_marginHorizontal="8dp"
+                           android:gravity="center"
+                           android:paddingHorizontal="8dp"
+                           android:text=""
+                           android:textSize="24sp" />
+
+                   </TableRow>
+
+                   <TableRow>
+
+                       <TextView
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:layout_gravity="center"
+                           android:layout_marginHorizontal="8dp"
+                           android:gravity="center"
+                           android:paddingHorizontal="8dp"
+                           android:text="29"
+                           android:textColor="@color/black"
+                           android:textSize="24sp"
+                           android:textStyle="bold" />
+
+                       <RadioButton
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:layout_gravity="center"
+                           android:layout_marginHorizontal="8dp"
+                           android:gravity="center"
+                           android:paddingHorizontal="8dp"
+                           android:text=""
+                           android:textSize="24sp" />
+
+                       <RadioButton
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:layout_gravity="center"
+                           android:layout_marginHorizontal="8dp"
+                           android:gravity="center"
+                           android:paddingHorizontal="8dp"
+                           android:text=""
+                           android:textSize="24sp" />
+
+                       <RadioButton
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:layout_gravity="center"
+                           android:layout_marginHorizontal="8dp"
+                           android:gravity="center"
+                           android:paddingHorizontal="8dp"
+                           android:text=""
+                           android:textSize="24sp" />
+
+                       <RadioButton
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:layout_gravity="center"
+                           android:layout_marginHorizontal="8dp"
+                           android:gravity="center"
+                           android:paddingHorizontal="8dp"
+                           android:text=""
+                           android:textSize="24sp" />
+                   </TableRow>
+
+                   <TableRow>
+
+                       <TextView
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:layout_gravity="center"
+                           android:layout_marginHorizontal="8dp"
+                           android:gravity="center"
+                           android:paddingHorizontal="8dp"
+                           android:text="30"
+                           android:textColor="@color/black"
+                           android:textSize="24sp"
+                           android:textStyle="bold" />
+
+                       <RadioButton
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:layout_gravity="center"
+                           android:layout_marginHorizontal="8dp"
+                           android:gravity="center"
+                           android:paddingHorizontal="8dp"
+                           android:text=""
+                           android:textSize="24sp" />
+
+                       <RadioButton
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:layout_gravity="center"
+                           android:layout_marginHorizontal="8dp"
+                           android:gravity="center"
+                           android:paddingHorizontal="8dp"
+                           android:text=""
+                           android:textSize="24sp" />
+
+                       <RadioButton
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:layout_gravity="center"
+                           android:layout_marginHorizontal="8dp"
+                           android:gravity="center"
+                           android:paddingHorizontal="8dp"
+                           android:text=""
+                           android:textSize="24sp" />
+
+                       <RadioButton
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:layout_gravity="center"
+                           android:layout_marginHorizontal="8dp"
+                           android:gravity="center"
+                           android:paddingHorizontal="8dp"
+                           android:text=""
+                           android:textSize="24sp" />
+                   </TableRow>
+
+                   <TableRow>
+
+                       <TextView
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:layout_gravity="center"
+                           android:layout_marginHorizontal="8dp"
+                           android:gravity="center"
+                           android:paddingHorizontal="8dp"
+                           android:text="31"
+                           android:textColor="@color/black"
+                           android:textSize="24sp"
+                           android:textStyle="bold" />
+
+                       <RadioButton
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:layout_gravity="center"
+                           android:layout_marginHorizontal="8dp"
+                           android:gravity="center"
+                           android:paddingHorizontal="8dp"
+                           android:text=""
+                           android:textSize="24sp" />
+
+                       <RadioButton
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:layout_gravity="center"
+                           android:layout_marginHorizontal="8dp"
+                           android:gravity="center"
+                           android:paddingHorizontal="8dp"
+                           android:text=""
+                           android:textSize="24sp" />
+
+                       <RadioButton
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:layout_gravity="center"
+                           android:layout_marginHorizontal="8dp"
+                           android:gravity="center"
+                           android:paddingHorizontal="8dp"
+                           android:text=""
+                           android:textSize="24sp" />
+
+                       <RadioButton
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:layout_gravity="center"
+                           android:layout_marginHorizontal="8dp"
+                           android:gravity="center"
+                           android:paddingHorizontal="8dp"
+                           android:text=""
+                           android:textSize="24sp" />
+                   </TableRow>
+
+               </TableLayout>&ndash;&gt;
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</HorizontalScrollView>-->
